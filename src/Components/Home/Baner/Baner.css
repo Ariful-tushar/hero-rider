@@ -1,0 +1,15 @@
+.tt-baner {
+  padding: 3em;
+  height: 50em;
+  /* background-image: url("bg-video.mp4"); */
+  /* background-image: url("https://i.ibb.co/QvQrQDB/fff.jpg"); */
+  background-image: url("https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187706/Blog_Post_01.jpg");
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* opacity: 0.5; */
+}
+
+/* .tt-baner-color {
+  color: rgb(19, 38, 48);
+} */

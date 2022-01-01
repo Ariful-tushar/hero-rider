@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Baner from "./Components/Home/Baner/Baner";
+import RegisterRider from "./Components/Login/Login/RegisterRider";
+import RegisterLearner from "./Components/Login/Login/RegisterLearner";
+import AuthProvider from "./Context/AuthProvider/AuthProvider";
+import DashBoard from "./Components/DashBoard/DashBoard/DashBoard";
+import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
+import Login from "./Components/Login/Login/Login";
+import Home from "./Components/Home/Home/Home";
+import Profile from "./Components/Profile/Profile";
+import LearningPackage from "./Components/LearningPackage/LearningPackage";
+import Payment from "./Components/DashBoard/Payment/Payment";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/home">
+              <Home></Home>
+            </Route>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route exact path="/registerrider">
+              <RegisterRider></RegisterRider>
+            </Route>
+            <Route exact path="/registerlearner">
+              <RegisterLearner></RegisterLearner>
+            </Route>
+            <Route exact path="/login">
+              <Login></Login>
+            </Route>
+            <PrivateRoute path="/dashboard">
+              <DashBoard></DashBoard>
+            </PrivateRoute>
+            <PrivateRoute path="/profile">
+              <Profile></Profile>
+            </PrivateRoute>
+            <PrivateRoute path="/learningpackage">
+              <LearningPackage></LearningPackage>
+            </PrivateRoute>
+            <PrivateRoute path="/purchase">
+              <Payment></Payment>
+            </PrivateRoute>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
