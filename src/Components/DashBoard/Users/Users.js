@@ -11,7 +11,9 @@ const Users = () => {
   const history = useHistory();
   const size = 10;
   useEffect(() => {
-    fetch(`http://localhost:5000/users?page=${page}&size=${size}`)
+    fetch(
+      `https://arcane-garden-71437.herokuapp.com/users?page=${page}&size=${size}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setUsers(data.users);

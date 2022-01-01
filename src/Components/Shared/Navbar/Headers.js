@@ -32,7 +32,7 @@ const Headers = () => {
                   {user?.email ? (
                     <div>
                       <Link
-                        to={"/profile"}
+                        to={"/myprofile"}
                         className="text-gray-300 text-xl hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                       >
                         My Profile
@@ -48,7 +48,9 @@ const Headers = () => {
                   ) : (
                     <div></div>
                   )}
-                  {isRider ? (
+                  {isRider & user ? (
+                    <div></div>
+                  ) : (
                     <div>
                       <Link
                         to={"/learningpackage"}
@@ -57,8 +59,6 @@ const Headers = () => {
                         Learning Packages
                       </Link>
                     </div>
-                  ) : (
-                    <div></div>
                   )}
                 </div>
               </div>

@@ -11,6 +11,7 @@ import Home from "./Components/Home/Home/Home";
 import Profile from "./Components/Profile/Profile";
 import LearningPackage from "./Components/LearningPackage/LearningPackage";
 import Payment from "./Components/DashBoard/Payment/Payment";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
             <PrivateRoute path="/dashboard">
               <DashBoard></DashBoard>
             </PrivateRoute>
-            <PrivateRoute path="/profile">
+            <PrivateRoute path="/myprofile">
               <Profile></Profile>
             </PrivateRoute>
             <PrivateRoute path="/learningpackage">
@@ -45,6 +46,9 @@ function App() {
             <PrivateRoute path="/purchase">
               <Payment></Payment>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </Router>
       </AuthProvider>

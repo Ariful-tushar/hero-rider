@@ -8,7 +8,7 @@ const MakeAdmin = () => {
   const [error, setError] = useState(false);
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/users/makeadmin", {
+    fetch("https://arcane-garden-71437.herokuapp.com/users/makeadmin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

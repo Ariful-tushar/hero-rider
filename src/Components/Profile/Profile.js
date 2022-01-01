@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react/cjs/react.development";
 import useAuth from "../../Hooks/useAuth";
 import Headers from "../Shared/Navbar/Headers";
@@ -9,36 +8,19 @@ const Profile = () => {
 
   const { user, isRider } = useAuth();
 
-  //   useEffect(() => {
-  //     fetch(`http://localhost:5000/users?email=${user.email}`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         if (data.isRider) {
-  //           fetch(`http://localhost:5000/riders?email=${user.email}`)
-  //             .then((res) => res.json())
-  //             .then((data) => {
-  //               setUserData(data);
-  //             });
-  //         } else {
-  //           fetch(`http://localhost:5000/learners?email=${user.email}`)
-  //             .then((res) => res.json())
-  //             .then((data) => {
-  //               setUserData(data[0]);
-  //               console.log(data[0].name);
-  //             });
-  //         }
-  //       });
-  //   }, []);
-
   useEffect(() => {
     if (isRider) {
-      fetch(`http://localhost:5000/riders?email=${user.email}`)
+      fetch(
+        `https://arcane-garden-71437.herokuapp.com/riders?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setUserData(data);
         });
     } else {
-      fetch(`http://localhost:5000/learners?email=${user.email}`)
+      fetch(
+        `https://arcane-garden-71437.herokuapp.com/learners?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setUserData(data[0]);
@@ -61,13 +43,6 @@ const Profile = () => {
             <span className="font-bold">Email: </span>
             {user.email}
           </h4>
-
-          {/* <button
-                onClick={() => handleDeleteOrder(_id)}
-                className="text-white font-bold bg-red-700 p-2 rounded-md my-1"
-              >
-                Cancel This Order
-              </button> */}
         </div>
       </div>
     </div>

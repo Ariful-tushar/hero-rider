@@ -27,7 +27,7 @@ const LearningPackage = () => {
           </h4>
 
           <h4>
-            <span className="font-bold">PPrice: </span>
+            <span className="font-bold">Price: </span>
             $200
           </h4>
           <button
@@ -43,15 +43,15 @@ const LearningPackage = () => {
             alt=""
           />
           <h2>
-            <span className="font-bold">Package Name:</span> Car Driving
+            <span className="font-bold">Package Name:</span> Bike Riding
           </h2>
           <h4>
             <span className="font-bold">Duration: </span>1 Month
           </h4>
 
           <h4>
-            <span className="font-bold">PPrice: </span>
-            $200
+            <span className="font-bold">Price: </span>
+            $100
           </h4>
           <button
             onClick={handlePurchaseButton}

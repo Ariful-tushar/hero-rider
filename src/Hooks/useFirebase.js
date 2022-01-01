@@ -64,7 +64,7 @@ const useFirebase = () => {
         formData.append("namePlate", riderData.namePlate);
         // console.log(formData);
 
-        fetch("http://localhost:5000/riders", {
+        fetch("https://arcane-garden-71437.herokuapp.com/riders", {
           method: "POST",
           body: formData,
         })
@@ -125,7 +125,7 @@ const useFirebase = () => {
         formData.append("vehicleType", learnerData.vehicleType);
         console.log(formData);
 
-        fetch("http://localhost:5000/learners", {
+        fetch("https://arcane-garden-71437.herokuapp.com/learners", {
           method: "POST",
           body: formData,
         })
@@ -194,7 +194,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     // setIsLoading(true);
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://arcane-garden-71437.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data.admin);
@@ -205,7 +205,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     // setIsLoading(true);
-    fetch(`http://localhost:5000/users?email=${user.email}`)
+    fetch(`https://arcane-garden-71437.herokuapp.com/users?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.users[0].isRider);
@@ -215,7 +215,7 @@ const useFirebase = () => {
 
   const saveUser = (email, name, phone, age, isRider, method) => {
     const user = { email, name, phone, age, isRider };
-    fetch("http://localhost:5000/users", {
+    fetch("https://arcane-garden-71437.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
